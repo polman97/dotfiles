@@ -5,9 +5,13 @@ echo "[yadm bootstrap] Running on $(hostname)..."
 
 # 1) Install base packages (Arch/CachyOS)
 if command -v pacman >/dev/null 2>&1; then
-	sudo pacman -Syu --noconfirm
-  	sudo pacman -S --needed --noconfirm \
-	neovim 
+  sudo pacman -Syu --noconfirm
+  sudo pacman -S --needed --noconfirm \
+    neovim \
+    python \
+    nodejs \
+    npm
+
 fi
 
 # 3) Rust toolchain (via rustup on Arch/CachyOS)
