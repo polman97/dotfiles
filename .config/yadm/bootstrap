@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -e
+
+echo "[yadm bootstrap] Running on $(hostname)..."
+
+# 1) Install base packages (Arch/CachyOS)
+if command -v pacman >/dev/null 2>&1; then
+	sudo pacman -Syu --noconfirm
+  	sudo pacman -S --needed --noconfirm \
+	neovim 
+fi
+
+# 3) Rust toolchain (via rustup on Arch/CachyOS)
+if command -v pacman >/dev/null 2>&1; then
+  if ! command -v rustup >/dev/null 2>&1; then
+    echo "[yadm bootstrap] Installing rustup + Rust stable..."
+    sudo pacman -S --needed rustup
+    rustup default stable
+  else
+    echo "[yadm bootstrap] rustup already installed, updating toolchain..."
+    rustup update stable
+  fi
+  rustup component add rust-analyzer
+fi
+
+echo "[yadm bootstrap] Done."
