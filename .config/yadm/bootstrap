@@ -3,7 +3,7 @@ set -e
 
 echo "[yadm bootstrap] Running on $(hostname)..."
 
-# 1) Install base packages (Arch/CachyOS)
+echo "[yadm bootstrap] installing necessary packages"
 if command -v pacman >/dev/null 2>&1; then
   sudo pacman -Syu --noconfirm
   sudo pacman -S --needed --noconfirm \
@@ -11,16 +11,42 @@ if command -v pacman >/dev/null 2>&1; then
     waybar \
     hyprlock \
     hypridle \
-    swaync \
-    neovim \
-    python \
-    nodejs \
-    npm
+    swaync
 fi
 
 if command -v yay >/dev/null 2>&1; then
   yay -S --needed --noconfirm \
-    hyprshot
+    hyprshot \
+    sddm-silent-theme
+fi
+
+#setting up SDDM Theme by copying our files to /usr/ sddm folders
+if [ -d "$HOME/.config/sddm/silent" ]; then
+  echo "[yadm bootstrap] Setting up SDDM customizations..."
+
+  sudo mkdir -p /usr/share/sddm/themes/silent/configs
+  sudo mkdir -p /usr/share/sddm/themes/silent/backgrounds
+
+  sudo cp "$HOME/.config/sddm/silent/metadata.desktop" \
+    /usr/share/sddm/themes/silent/metadata.desktop
+
+  sudo cp "$HOME/.config/sddm/silent/porco.conf" \
+    /usr/share/sddm/themes/silent/configs/porco.conf
+
+  sudo cp "$HOME/.config/sddm/background/porco_rosso.mp4" \
+    /usr/share/sddm/themes/silent/backgrounds/porco_rosso.mp4
+
+  sudo cp "$HOME/.config/sddm/sddm.conf" \
+    /etc/sddm.conf
+fi
+# extra packages
+echo "[yadm bootstrap] installing extra packages"
+if command -v yay >/dev/null 2>&1; then
+  yay -S --needed --noconfirm \
+    neovim \
+    python \
+    nodejs \
+    npm
 fi
 
 # 3) Rust toolchain (via rustup on Arch/CachyOS)
@@ -35,5 +61,4 @@ if command -v pacman >/dev/null 2>&1; then
   fi
   rustup component add rust-analyzer
 fi
-
 echo "[yadm bootstrap] Done."
