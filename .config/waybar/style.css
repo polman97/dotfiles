@@ -1,0 +1,74 @@
+@import url("/home/gpolman/.cache/wal/colors-waybar.css");
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 18px;
+}
+
+window#waybar {
+  background: transparent;
+  color: @foreground;
+}
+
+/* The bar itself as a rounded floating strip */
+#waybar > box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin: 8px 12px 0 12px;
+}
+
+#clock,
+#battery,
+#network,
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#tray {
+  padding: 0 10px;
+  color: @foreground;
+}
+
+#clock {
+  padding: 0 14px;
+  font-weight: bold;
+}
+
+#workspaces {
+  margin: 0 4px;
+}
+
+#workspaces button {
+  padding: 0 6px;
+  color: @color7;
+  background: transparent;
+  border-radius: 6px;
+  border: none;
+}
+
+#workspaces button.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: @foreground;
+}
+
+#workspaces button.empty {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#temperature.critical {
+  color: #ff5555;
+}
+
+#battery.warning {
+  color: #ffaa55;
+}
+
+#battery.critical {
+  color: #ff5555;
+}
+

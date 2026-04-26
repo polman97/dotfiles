@@ -7,9 +7,13 @@ if [ -z "$IMG" ] || [ ! -f "$IMG" ]; then
   exit 1
 fi
 
-awww img "$IMG" --transition-type any --transition-step 40 &
+awww img "$IMG" --transition-type any --transition-step 10 &
 
 wal -q -i "$IMG" 
 
 cp "$IMG" "$CANONICAL_WAL"
 # now we can add commands that reload / change theme of all our apps :)
+
+#kill and reload waybar
+pkill waybar 2>/dev/null
+waybar &

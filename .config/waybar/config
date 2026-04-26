@@ -1,0 +1,93 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 32,
+
+  "modules-left": ["clock", "hyprland/workspaces"],
+  "modules-center": [],
+  "modules-right": [
+    "bluetooth",
+    "network",
+    "pulseaudio",
+    "battery",
+    "cpu",
+    "memory",
+    "temperature",
+    "tray"
+  ],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "fixed-count": 5
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}"
+  },
+
+  "bluetooth": {
+    "format-on": "󰂯",
+    "format-off": "󰂲",
+    "format-connected": "󰂱 {device_alias}",
+    "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}"
+  },
+
+  "network": {
+    "format-wifi": "󰤨 {signalStrength}%  󰇚 {bandwidthDownBytes}  󰕒 {bandwidthUpBytes}",
+    "format-ethernet": "󰈀 {bandwidthDownBytes}  󰕒 {bandwidthUpBytes}",
+    "format-disconnected": "󰖪 Offline",
+    "tooltip-format": "{ifname} {ipaddr}/{cidr}\n󰇚 {bandwidthDownBytes}\n󰕒 {bandwidthUpBytes}"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 {volume}%",
+    "format-icons": {
+      "headphones": "󰋋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "scroll-step": 5
+  },
+
+  "battery": {
+    "format": "󰁹 {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-full": "󰁹 {capacity}%",
+    "states": {
+      "warning": 30,
+      "critical": 15
+    }
+  },
+
+  "cpu": {
+    "format": "󰍛 {usage}%"
+  },
+
+  "memory": {
+    "format": "󰘚 {percentage}%"
+  },
+
+  "temperature": {
+    "interval": 5,
+    "critical-threshold": 80,
+    "format": "󰔏 {temperatureC}°C",
+    "format-critical": "󰸁 {temperatureC}°C",
+    "hwmon-path": [
+      "/sys/class/hwmon/hwmon0/temp1_input",
+      "/sys/class/hwmon/hwmon1/temp1_input",
+      "/sys/class/hwmon/hwmon2/temp1_input",
+      "/sys/class/hwmon/hwmon3/temp1_input",
+      "/sys/class/hwmon/hwmon4/temp1_input"
+    ]
+  },
+
+  "tray": {
+    "spacing": 10
+  }
+}
+
