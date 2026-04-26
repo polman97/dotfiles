@@ -7,5 +7,4 @@ cd ~
 yadm clone git@github.com:polman97/dotfiles.git`
 ```
 
-```
 
