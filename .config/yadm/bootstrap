@@ -11,7 +11,8 @@ if command -v pacman >/dev/null 2>&1; then
     waybar \
     hyprlock \
     hypridle \
-    swaync
+    swaync \
+    hyprpicker
 fi
 
 if command -v yay >/dev/null 2>&1; then
@@ -35,6 +36,9 @@ if [ -d "$HOME/.config/sddm/silent" ]; then
 
   sudo cp "$HOME/.config/sddm/background/porco_rosso.mp4" \
     /usr/share/sddm/themes/silent/backgrounds/porco_rosso.mp4
+
+  sudo cp "$HOME/.config/sddm/background/porco_rosso.png" \
+    /usr/share/sddm/themes/silent/backgrounds/porco_rosso.png
 
   sudo cp "$HOME/.config/sddm/sddm.conf" \
     /etc/sddm.conf
