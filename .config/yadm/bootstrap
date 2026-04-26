@@ -9,6 +9,8 @@ if command -v pacman >/dev/null 2>&1; then
   sudo pacman -S --needed --noconfirm \
     yay \
     waybar \
+    hyprlock \
+    hypridle \
     swaync \
     neovim \
     python \
@@ -17,7 +19,7 @@ if command -v pacman >/dev/null 2>&1; then
 fi
 
 if command -v yay >/dev/null 2>&1; then
-  sudo yay -S --needed --nocinfirm \
+  yay -S --needed --noconfirm \
     hyprshot
 fi
 
