@@ -1,0 +1,6 @@
+
+[window]
+opacity = 0.95
+
+[general]
+import = ["~/.cache/wal/colors-alacritty.toml"]

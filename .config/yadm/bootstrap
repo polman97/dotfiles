@@ -12,7 +12,9 @@ if command -v pacman >/dev/null 2>&1; then
     hyprlock \
     hypridle \
     swaync \
-    hyprpicker
+    hyprpicker \
+    python-pywal \
+    swww
 fi
 
 if command -v yay >/dev/null 2>&1; then
