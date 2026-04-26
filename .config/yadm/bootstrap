@@ -16,7 +16,7 @@ fi
 
 if command -v yay >/dev/null 2>&1; then
   sudo yay -S --needed --nocinfirm \
-    test
+    hyprshot
 fi
 
 # 3) Rust toolchain (via rustup on Arch/CachyOS)
