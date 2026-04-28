@@ -56,6 +56,7 @@ if command -v yay >/dev/null 2>&1; then
     neovim \
     python \
     nodejs \
+    lazygit \
     npm
 fi
 
