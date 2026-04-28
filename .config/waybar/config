@@ -6,13 +6,10 @@
   "modules-left": ["clock", "hyprland/workspaces"],
   "modules-center": [],
   "modules-right": [
-    "bluetooth",
-    "network",
     "pulseaudio",
     "battery",
-    "cpu",
-    "memory",
-    "temperature",
+    "bluetooth",
+    "network",
     "tray"
   ],
 
@@ -34,14 +31,15 @@
     "format-connected-battery": "󰂱 {device_alias} {device_battery_percentage}%",
     "tooltip-format": "{controller_alias}\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}"
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "kitty -e bluetui"
   },
 
   "network": {
-    "format-wifi": "󰤨 {signalStrength}%  󰇚 {bandwidthDownBytes}  󰕒 {bandwidthUpBytes}",
-    "format-ethernet": "󰈀 {bandwidthDownBytes}  󰕒 {bandwidthUpBytes}",
-    "format-disconnected": "󰖪 Offline",
-    "tooltip-format": "{ifname} {ipaddr}/{cidr}\n󰇚 {bandwidthDownBytes}\n󰕒 {bandwidthUpBytes}"
+    "format-wifi": "󰤨 ",
+    "on-click": "kitty -e impala",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)"
   },
 
   "pulseaudio": {
@@ -62,28 +60,6 @@
       "warning": 30,
       "critical": 15
     }
-  },
-
-  "cpu": {
-    "format": "󰍛 {usage}%"
-  },
-
-  "memory": {
-    "format": "󰘚 {percentage}%"
-  },
-
-  "temperature": {
-    "interval": 5,
-    "critical-threshold": 80,
-    "format": "󰔏 {temperatureC}°C",
-    "format-critical": "󰸁 {temperatureC}°C",
-    "hwmon-path": [
-      "/sys/class/hwmon/hwmon0/temp1_input",
-      "/sys/class/hwmon/hwmon1/temp1_input",
-      "/sys/class/hwmon/hwmon2/temp1_input",
-      "/sys/class/hwmon/hwmon3/temp1_input",
-      "/sys/class/hwmon/hwmon4/temp1_input"
-    ]
   },
 
   "tray": {

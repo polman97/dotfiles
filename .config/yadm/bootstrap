@@ -16,7 +16,9 @@ if command -v pacman >/dev/null 2>&1; then
     python-pywal \
     ttf-jetbrains-mono-nerd \
     yazi \
-    swww
+    swww \
+    impala \
+    bluetui
 fi
 
 if command -v yay >/dev/null 2>&1; then
