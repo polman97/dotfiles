@@ -9,7 +9,8 @@ if command -v pacman >/dev/null 2>&1; then
   sudo pacman -S --needed --noconfirm \
     yay \
     ttf-jetbrains-mono-nerd \
-    yazi 
+    ghostty \
+    yazi
 fi
 
 if command -v yay >/dev/null 2>&1; then
