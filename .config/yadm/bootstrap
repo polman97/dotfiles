@@ -8,22 +8,12 @@ if command -v pacman >/dev/null 2>&1; then
   sudo pacman -Syu --noconfirm
   sudo pacman -S --needed --noconfirm \
     yay \
-    waybar \
-    hyprlock \
-    hypridle \
-    swaync \
-    hyprpicker \
-    python-pywal \
     ttf-jetbrains-mono-nerd \
-    yazi \
-    swww \
-    impala \
-    bluetui
+    yazi 
 fi
 
 if command -v yay >/dev/null 2>&1; then
   yay -S --needed --noconfirm \
-    hyprshot \
     sddm-silent-theme
 fi
 

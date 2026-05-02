@@ -1,5 +1,5 @@
-# Hyprland setup 
-My personal hyprland dotfiles. WIP
+# Niri setup 
+My personal Niri dotfiles. WIP
 ## to install:
 ```bash
 pacman -S yadm
