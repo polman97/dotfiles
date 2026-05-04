@@ -39,10 +39,10 @@ binds {
     Mod+H                               { focus-column-left; }
     Mod+Right                           { focus-column-right; }
     Mod+L                               { focus-column-right; }
-    Mod+Up                              { focus-window-up; }
-    Mod+K                               { focus-window-up; }
-    Mod+Down                            { focus-window-down; }
-    Mod+J                               { focus-window-down; }
+    Mod+Up                              { focus-window-or-workspace-up; }
+    Mod+K                               { focus-window-or-workspace-up; }
+    Mod+Down                            { focus-window-or-workspace-down; }
+    Mod+J                               { focus-window-or-workspace-down; }
 
     Mod+CTRL+Left                       { move-column-left; }
     Mod+CTRL+H                          { move-column-left; }
